@@ -17,7 +17,7 @@ void get_file_line(FILE *file_d)
 	/* Getting each line in the file */
 	for (line_n = 1; getline(&buffer, &buff_size, file_d) != EOF; line_n++)
 	{
-		printf("%s", buffer);
+
 	}
 
 	free(buffer);
