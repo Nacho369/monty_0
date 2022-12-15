@@ -3,8 +3,11 @@
 
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <stdarg.h>
 
 
 #define BUFF_SIZE 65
@@ -50,5 +53,17 @@ typedef struct instruction_s
 /* Functions Prototypes */
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
+void get_file_line(FILE *file_d);
+
+/* Errors Prototype */
+int usage_error(void);
+
+int malloc_error(void);
+
+int f_open_error(char *filename);
+
+int unknown_op_error(char *opcode, unsigned int line_number);
+
+int no_int_error(unsigned int line_number);
 
 #endif
