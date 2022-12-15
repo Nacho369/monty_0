@@ -4,7 +4,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+
+
 #define BUFF_SIZE 65
+
+
 /**
  * Indicates that the stack is empty
  */
@@ -40,5 +45,10 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+/* Functions Prototypes */
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+
 
 #endif
